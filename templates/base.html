@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwacja sal</title>
+    <style>
+        #menu {
+            width:20%;
+            float:left;
+        }
+        #tresc {
+            width:80%;
+            float:left;
+        }
+        #stopka {
+            width:100%;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li><a href="">link</a></li>
+    </ul>
+</div>
+
+<div id="tresc">
+    {% block content %}
+    jakaś treść
+    {% endblock %}
+</div>
+
+<div id="stopka">
+    Autor projektu: Mariusz Śledź
+</div>
+</body>
+</html>
