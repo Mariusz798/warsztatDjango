@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table>
+        <form method="post">
+        {% csrf_token %}
+            <tr><th>Nazwa sali</th><th><input type="text" name="name" value="{{ room.name }}"></th></tr>
+            <tr><th>Pojemność sali</th><th><input type="number" name="capacity" value="{{ room.capacity }}"></th></tr>
+            <tr><th>Dostępność rzutnika</th><td><input type="checkbox" name="projector"></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Modyfikuj salę"></td></tr>
+        </form>
+    </table>
+{% endblock %}

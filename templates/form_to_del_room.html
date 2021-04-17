@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table>
+        <form method="post">
+        {% csrf_token %}
+            <tr><th>Nazwa sali</th><th>
+                <select name="id_room">
+                    {% for room in rooms %}
+                        <option value="{{ room.id }}">{{ room.name }}</option>
+                    {% endfor %}
+                </select>
+            </th></tr>
+            <tr><td colspan="2"><input type="submit" value="Usuń salę"></td></tr>
+        </form>
+    </table>
+{% endblock %}

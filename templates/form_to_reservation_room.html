@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Rezerwacja: <b>{{ room.name }}</b></h3>
+        <form method="post">
+            {% csrf_token %}
+            <p><b>Wybierz datę</b></p><input type="date" name="date" >
+            <p><b>Komentarz</b></p><textarea name="comment" placeholder="Dodaj komentarz" cols="45" rows="7"></textarea>
+            <p><input type="submit" value="Rezerwuję"></p>
+        </form>
+
+{% endblock %}

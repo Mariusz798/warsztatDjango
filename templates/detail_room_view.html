@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<table>
+    <tr><th>Nazwa sali:</th><th>{{ room.name }}</th></tr>
+    <tr><th>Pojemność sali:</th><th>{{ room.capacity}}</th></tr>
+    <tr><th>Projektor w sali:</th><th>{{ room.projector_availability }}</th></tr>
+</table>
+
+{% if room %}
+    <p><b>Przyszłe rezerwacje:</b></p>
+    <table>
+        {% for room in room.reservationmodel_set.all %}
+        <tr><td>{{ room.date }} -</td><td>{{ room.comment }}</td></tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Brak rezerwacji</p>
+{% endif %}
+{% endblock %}

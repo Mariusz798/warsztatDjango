@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table border="1px">
+    <tr><th>Nazwa sali</th><th>Pojemność sali</th><th>Dostępność projektora</th><th>Modyfikuj</th></tr>
+    {% for room in rooms %}
+        <tr><td align="center"><a href="{{ room.get_absolute_url }}">{{ room.name }}</a></td><td align="center">{{ room.capacity }}</td><td align="center">{{ room.projector_availability }}</td><td><a href="{{ room.get_modify_url }}">Modyfikuj</a></td></tr>
+    {% endfor %}
+    </table>
+{% endblock %}
